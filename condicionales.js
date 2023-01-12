@@ -1,4 +1,4 @@
-var edad = prompt("Ingresa tu edad");
+var edad = prompt("Ingresa tu edad"); //Prompt es lo equivalent a un input
 
 if(edad < 0 || edad > 100){
     console.log("Edad no valida")
