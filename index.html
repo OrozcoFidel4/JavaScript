@@ -11,7 +11,7 @@
 
     <script>
 //Declaracion de variables
-var nombre = "Fidel";
+/*var nombre = "Fidel";
 var edad  = 19;
 var profesion = "Musico";
 var colorfav = "Negro";
@@ -32,7 +32,27 @@ const fechaNac = new Date("2003-05-04");
         //Ejercicio 
     console.log(`Hola mi nombre es ${nombre} tengo ${edad} años naci en ${ciudadNac} el dia ${fechaNac}.
 Mi color favorito es el ${colorfav} y mi deporte favorito es el ${deportefav} trabajo como ${profesion} y mido ${estatura}`)
-    </script>
+    
+/* Funcion PROMPT()
+var nombre = prompt("Captura tu nombre");
+console.log(`Mi nombre es ${nombre}`)
+*/
+
+
+var edad = prompt("Ingresa tu edad");
+
+if(edad < 0 || edad > 100){
+    console.log("Edad no valida")
+}else{
+    if(edad >= 18){
+        console.log("Felicidades ya eres mayor de edad!!")
+    }else{
+        console.log("Aun eres menor, sigue esperando :(")
+    }
+}
+    
+    
+</script>
 
    
 </body>
