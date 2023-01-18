@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexVue</title>
+    <style>
+        h1 {
+            font-family: 'Arial Narrow Bold';
+            color: blueviolet;
+        }
+
+        button {
+            background-color: rgb(235, 165, 235);
+            color:whitesmoke;
+            width: 150px;
+            height: 50px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div id="app"> <!-- Se le agrega id para hacer match con vue -->
+        <h1>Contador: {{contador}}
+            <br>
+            <br>
+            <button v-on:click="decrementar()" >Decrementar</button>
+            <br>
+            <br>
+            <button v-on:click="incrementar()" >Incrementar</button>
+            <br>
+            <br>
+            <button v-on:click="reset()" >Reset</button>
+
+
+        </h1>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Cdn del vue, para usar el codigo sin descargar -->
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    contador: 0
+                }
+            },
+            methods: {
+                decrementar() {
+                    this.contador --; //this. hace referencia que tomara las variables del data
+
+                    if (this.contador < 0){
+                        this.contador = 0
+                        alert("No se permiten numeros negativos!!")
+                    }
+                },
+                incrementar(){
+                    this.contador ++
+                },
+                reset(){
+                    this.contador = 0
+                }
+            }
+        }).mount("#app"); // .mount(#app) es para decirle que cosa usara vue
+
+    </script>
+
+</body>
+
+</html>
