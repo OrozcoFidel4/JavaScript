@@ -17,6 +17,8 @@
             color:whitesmoke;
             width: 150px;
             height: 50px;
+            margin-right: 10px; 
+            
 
         }
     </style>
@@ -25,9 +27,15 @@
 
 <body>
 
+    <div id="app">
+    <h1 v-if="becado==true">AHORA ERES BECADO</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
+    <h1 v-else=>YA NO TENGO BECA</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
+    <button @click="conBeca()">ESTAS BECADO</button>
+    <button @click="sinBeca()">NO ESTAS BECADO</button>
+    </div>
 
 
-    <div id="app"> <!-- Se le agrega id para hacer match con vue -->
+    <div id="cont"> <!-- Se le agrega id para hacer match con vue -->
         <h1>Contador: {{contador}}
             <br>
             <br>
@@ -44,33 +52,8 @@
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Cdn del vue, para usar el codigo sin descargar -->
-    <script>
-        Vue.createApp({
-            data() {
-                return {
-                    contador: 0
-                }
-            },
-            methods: {
-                decrementar() {
-                    this.contador --; //this. hace referencia que tomara las variables del data
-
-                    if (this.contador < 0){
-                        this.contador = 0
-                        alert("No se permiten numeros negativos!!")
-                    }
-                },
-                incrementar(){
-                    this.contador ++
-                },
-                reset(){
-                    this.contador = 0
-                }
-            }
-        }).mount("#app"); // .mount(#app) es para decirle que cosa usara vue
-
-    </script>
+   <script src="condicionales.js"></script>
+   <script src="contador.js"></script>
 
 </body>
 
