@@ -28,11 +28,34 @@
 <body>
 
     <div id="app">
-    <h1 v-if="becado==true">AHORA ERES BECADO</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
-    <h1 v-else=>YA NO TENGO BECA</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
-    <button @click="conBeca()">ESTAS BECADO</button>
-    <button @click="sinBeca()">NO ESTAS BECADO</button>
+    <h1 v-if="becado">AHORA ERES BECADO</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
+    <h1 v-else>YA NO TENGO BECA</h1> <!-- V-if para hacer condicionales con cualquier elemento -->
+    
+    <button @click="becado=true">ESTAS BECADO</button>
+    <button @click="becado=false">NO ESTAS BECADO</button>
     </div>
+
+
+    <div id="nombre">
+        <h1>Mi nombre es: {{nombre}} </h1>
+        <input v-model="nombre" type="text">
+        <br>
+        <h1>Carrera: {{carrera}}</h1>
+        <select v-model="nombre">
+            <option>Software</option>
+            <option>Desarrollo De Negocios</option>
+            <option>OCI</option>
+            <option>Mecatronica</option>
+        </select>
+
+        <h1>Ingresa tu edad: </h1>
+        <input v-model="edad" type="number" >
+        <h1>{{resultado}}</h1>
+        <button @click="calcular()">Calcular</button>
+
+    </div>
+
+    
 
 
     <div id="cont"> <!-- Se le agrega id para hacer match con vue -->
@@ -54,6 +77,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="condicionales.js"></script>
    <script src="contador.js"></script>
+   <script src="model.js"></script>
 
 </body>
 
