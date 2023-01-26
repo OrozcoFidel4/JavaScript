@@ -16,56 +16,71 @@
     <div class="container mt-3" id="app">
 
         <h1>Lista Del Carrito</h1>
-        <form>
+        <form @submit.prevent="agregar()"> <!-- Submit.prevent es para evitar el refresco de las paginas y despues poner el metodo para evitar bugs -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre Del Producto</label>
-                <input required type="text" class="form-control">
+                <input v-model="nombre" required type="text" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Precio Del Producto</label>
-                <input required type="number" class="form-control">
+                <input v-model="precio" required type="number" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Cantidad De Productos</label>
-                <input required type="number" class="form-control">
+                <input v-model="cantidad" required type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Departamento</label>
+                <input v-model="departamento" required type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Codigo</label>
+                <input v-model="codigo" required type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Vencimiento</label>
+                <input v-model="vencimiento" required type="date" class="form-control">
             </div>
 
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
-    </div>
 
 
-    <div class="container mt-5">
-    <div class="mb-3">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
- 
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
- 
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-               
-            </tr>
-        </tbody>
-    </table>
-    </div>
+
+
+        <br>
+        <br>
+        <div class="mb-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Vencimiento</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="producto in productos">
+                        <th>{{producto.nombre}}</th>
+                        <td>{{producto.precio}}</td>
+                        <td>{{producto.cantidad}}</td>
+
+                        <td>{{producto.departamento}}</td>
+                        <td>{{producto.codigo}}</td>
+                        <td>{{producto.vencimiento}}</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
 
