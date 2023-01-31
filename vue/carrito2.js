@@ -1,12 +1,14 @@
 Vue.createApp({
     data() {
         return {
+            colorTable: '',
             nombre: '',
             precio: '',
             cantidad: '',
             departamento: '',
-            codigo: '',
+            url: '',
             vencimiento:'',
+            
 
             productos: [
                 
@@ -20,8 +22,9 @@ Vue.createApp({
             precio: this.precio,
             cantidad: this.cantidad,   /* Se crea el objeto en el metodo */
             departamento: this.departamento,
-            codigo: this.codigo,
-            vencimiento: this.vencimiento
+            url: this.url,
+            vencimiento: this.vencimiento,
+            
         }  
 
         this.productos.push(producto); /* Aqui ya se empuja la variable anterior que tiene el arreglo completo */

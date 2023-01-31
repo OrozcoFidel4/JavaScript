@@ -16,7 +16,8 @@
     <div class="container mt-3" id="app">
 
         <h1>Lista Del Carrito</h1>
-        <form @submit.prevent="agregar()"> <!-- Submit.prevent es para evitar el refresco de las paginas y despues poner el metodo para evitar bugs -->
+        <form @submit.prevent="agregar()">
+            <!-- Submit.prevent es para evitar el refresco de las paginas y despues poner el metodo para evitar bugs -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre Del Producto</label>
                 <input v-model="nombre" required type="text" class="form-control">
@@ -34,52 +35,61 @@
                 <input v-model="departamento" required type="text" class="form-control">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Codigo</label>
-                <input v-model="codigo" required type="number" class="form-control">
+                <label for="exampleInputEmail1" class="form-label">Url</label>
+                <input v-model="url" required type="url" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Vencimiento</label>
                 <input v-model="vencimiento" required type="date" class="form-control">
             </div>
 
+
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
 
 
-
-
         <br>
         <br>
-        <div class="mb-3">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Cantidad</th>
-                        
-                        <th scope="col">Departamento</th>
-                        <th scope="col">Codigo</th>
-                        <th scope="col">Vencimiento</th>
+        <h5>Table Color</h5>
+        <select v-model="colorTable"> <!-- V model para ligar variable con input select etc. -->
+            <option value="dark">Color Negro</option>
+            <option value="danger">Color Rojo</option>
+            <option value="success">Color Verde</option>
+            <option value="warning">Color Amarillo</option>
+
+        </select>
 
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="producto in productos">
-                        <th>{{producto.nombre}}</th>
-                        <td>{{producto.precio}}</td>
-                        <td>{{producto.cantidad}}</td>
+        <table :class="'table mt-5 table-'+colorTable"> <!-- concatenar variables de vue con html -->
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
 
-                        <td>{{producto.departamento}}</td>
-                        <td>{{producto.codigo}}</td>
-                        <td>{{producto.vencimiento}}</td>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Vencimiento</th>
 
 
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="producto in productos">
+                    <th>{{producto.nombre}}</th>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.cantidad}}</td>
+
+                    <td>{{producto.departamento}}</td>
+                    <td><img :src="producto.url" alt="FotoNoEncontrada" style="width: 100px;"></td>
+                    <td>{{producto.vencimiento}}</td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     </div>
 
