@@ -1,4 +1,4 @@
-Vue.createApp({
+const app = Vue.createApp({ /* Const es para meter el vue en una variable */
     data() {
         return {
             select1:''
@@ -21,4 +21,4 @@ Vue.createApp({
             }
         }
     }
-}).mount('#app')
+}) /* Ya no se necesita el mount.app("") en el vue ahora se manda al front end */
