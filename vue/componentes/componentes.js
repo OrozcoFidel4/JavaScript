@@ -32,7 +32,7 @@ art.component(`my-navbar`, {
     template: `<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="descarga.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+            <img src="https://xentra.mx/mercadolibre/image/MERCADO.png" alt="Avatar Logo" style="width:200px;" > 
           </a>
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -43,9 +43,6 @@ art.component(`my-navbar`, {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Accesorios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Proximamente...</a>
         </li>
       </ul>
     </div>
