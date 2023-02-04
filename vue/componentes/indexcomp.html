@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Componentes</title>
+</head>
+
+<body>
+
+
+
+    <div id="art"> <!-- id="NombreVar" -->
+        <my-navbar></my-navbar>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <my-div></my-div>
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-2">
+                <my-car></my-car>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col sm-2">
+                <my-card p="Guitarra electroacustica de 12 cuerdas marca takamine" h5="Takamine Tsp158c-12"
+                image="https://http2.mlstatic.com/D_NQ_NP_879003-MLM43383586631_092020-O.jpg"></my-card>
+            </div>
+            <div class="col sm-2">
+                <my-card h5="Hohner Compadre" p="Acordeon hohner compadre tono de Fa color negro"
+                image="https://karmamusic.mx/13331-large_default/hohner-acordeon-compadre-fbbeb-negro-a48421.jpg"></my-card>
+            </div>
+            <div class="col sm-2">
+                <my-card h5="Fender Jazz Bass V" p="Bajo 5 cueras fendeer Jazz Bass V color natural"
+                image="https://images.reverb.com/image/upload/s--xJN9lazM--/f_auto,t_large/v1572968895/n97bevrfdbpdqpy7scpv.jpg"></my-card>
+            </div>
+            <div class="col sm-2">
+                <my-card h5="Takamine Ef341Sc-BK" p="Guitarra electroacustica de 6 cuerdas marca takamine"
+                image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ__LS2CMuCCinXegN0VD9OMaZMFeT_Y1jtxr0R0-2o-qNWGe3HAlulNqvUVJMk5L1hPZc&usqp=CAU"></my-card>
+            </div>
+
+        </div>
+
+
+        <!-- https://http2.mlstatic.com/D_NQ_NP_624155-MLM43383586169_092020-O.webp -->
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="componentes.js"></script>
+    <script>
+        art.mount('#art') /* NombreVar.mount('#NombreVar') */
+    </script>
+</body>
+
+</html>
