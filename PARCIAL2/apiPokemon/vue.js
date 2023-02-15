@@ -2,6 +2,7 @@ Vue.createApp({
     data(){
         return{
             pokemon: null
+            
         }
     }, methods:{
         async getPokemon(){
