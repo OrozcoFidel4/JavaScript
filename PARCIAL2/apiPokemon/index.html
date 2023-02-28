@@ -21,59 +21,31 @@
     </nav>
 
 
+
     <div class="container mt-3" id="app">
 
-        <div v-if="pokemon != null" class="container mt-3">
-            <div class="card" style="width: 18rem;">
-                <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{pokemon.name}}</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Id: {{pokemon.order}}</li>
-                        <li class="list-group-item">
-                            <p>
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseWidthExample" aria-expanded="false"
-                                    aria-controls="collapseWidthExample">
-                                    Habilidades
-                                </button>
-                            </p>
-                            <div style="min-height: 120px;">
-                                <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                    <div style="width: 300px;">
-                                        <span v-for="habilidad in pokemon.abilities" class="mx-2 badge bg-warning">
-                                            {{habilidad.ability.name}}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <p>
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseWidthExample" aria-expanded="false"
-                                    aria-controls="collapseWidthExample">
-                                    Movimientos
-                                </button>
-                            </p>
-                            <div style="min-height: 120px;">
-                                <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                    <div style="width: 300px;">
-                                        <span v-for="move in pokemon.moves" class="mx-2 badge bg-danger">
-                                            {{move.move.name}}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+        <div class="container mt-3">
+            <input v-model="numero" type="number" name="" id="">
+            <button @click="getPokemon()" class="btn btn-danger">Obtener</button>
+        </div>
+
+
+        <div v-if="carga">
+            <img src="images/carga.gif" alt="">
+        </div>
+        <div v-if="carga==false" class="d-flex flex-wrap">
+            <div v-for="pokemon in pokemones" class="card m-2" style="width: 18rem;">
+                <div class="card" style="width: 18rem;">
+                    <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pokemon.name}}</h5>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container mt-3">
-            <button @click="getPokemon()" class="btn btn-danger">Obtener</button>
-        </div>
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
