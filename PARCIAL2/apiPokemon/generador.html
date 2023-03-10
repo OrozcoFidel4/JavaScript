@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-primary navbar-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="inicio.html">
+            <a class="navbar-brand" href="generador.html">
                 <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png" alt="Avatar Logo"
                     style="width:100px;">
             </a>
@@ -29,6 +29,7 @@
             <input v-model="numero" type="number" name="" id="">
             <button @click="getPokemon()" class="btn btn-danger " style="margin-left: 5px;">Get</button>
             <a href="generador.html" class="btn btn-danger" style="margin-left: 5px;">Clean</a>
+
 
             
         </div>
@@ -48,7 +49,7 @@
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen">
                                 <div v-if="pokemonInfo!=null" class="modal-content text-center">
