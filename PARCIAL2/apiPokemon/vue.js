@@ -3,7 +3,10 @@ Vue.createApp({
         return {
             carga: null,
             numero: 0,
-            pokemones: []
+            pokemones: [],
+            idPokemon: 0,
+            pokemonInfo: null
+            
 
         }
     }, methods: {
@@ -21,9 +24,12 @@ Vue.createApp({
                 }); /*Peticion http*/
                 const data = await response.json();
                 this.pokemones.push(data);
+                console.log(this.pokemones);
+
             }
             this.carga = false;
         }
+         
     }
 }).mount('#app')
 

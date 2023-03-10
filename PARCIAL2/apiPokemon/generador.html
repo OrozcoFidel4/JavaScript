@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Generator</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="inicio.html">
+                <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png" alt="Avatar Logo"
+                    style="width:100px;">
+            </a>
+        </div>
+    </nav>
+
+
+
+    <div class="container mt-3" id="app">
+
+        <div class="container mt-3">
+            <h3>How many Pokemons do you want generate?</h3>
+            <input v-model="numero" type="number" name="" id="">
+            <button @click="getPokemon()" class="btn btn-danger " style="margin-left: 5px;">Get</button>
+            <a href="generador.html" class="btn btn-danger" style="margin-left: 5px;">Clean</a>
+
+            
+        </div>
+
+
+        <div v-if="carga" class="text-center">
+            <img src="images/carga.gif" alt="" style="width:50%; height:50%; text-align: center;">
+        </div>
+        <div class="d-flex flex-wrap">
+            <div v-for="pokemon in pokemones" v-if="carga == false" @click="pokemonInfo = pokemon" class="card m-2" style="width: 18rem;">
+                <!-- Almacena la infoormacion en un objeto  -->
+                <div data-bs-toggle="modal" data-bs-target="#exampleModal" class="card" style="width: 18rem;">
+                    <!-- se agrega el modal para que cargue al momento de dar click en la carta -->
+                    <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pokemon.name}}</h5>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div v-if="pokemonInfo!=null" class="modal-content text-center">
+                                    <!-- si el objeto no es nulo  -->
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pokemon Information</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                         <div class="card mb-5" style="max-width: 1920px; text-align: justify;">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    
+                                                    <div class="container mt-5">
+                                                    <img :src="pokemonInfo.sprites.other.dream_world.front_default" style="width: 590px;"class="img-fluid rounded-start" alt="...">
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h1 class="card-title">{{pokemonInfo.name}}</h1>
+                                                        <h5 class="card-text">Identifier: {{pokemonInfo.id}}</h5>
+                                                        <h5 class="card-text">Weight: {{pokemonInfo.weight}} lbs</h5>
+
+                                                        <br>
+                                                        <h5 class="text-primary">Type:</h5>
+                                                        <span v-for="tipos in pokemonInfo.types" class="mx-1 badge bg-primary">
+                                                            {{tipos.type.name}}
+                                                          </span>
+
+                                                        <br>
+                                                        <br>
+                                                        <h5 class="text-success">Skills:</h5>
+                                                        <span v-for="habilidad in pokemonInfo.abilities" class="mx-1 badge bg-success">
+                                                            {{habilidad.ability.name}}
+                                                          </span>
+
+                                                        <br>
+                                                        <br>
+                                                        <h5 class="text-danger">Moves:</h5>
+                                                        <span v-for="movimientos in pokemonInfo.moves" class="mx-1 badge bg-danger">
+                                                            {{movimientos.move.name}}
+                                                        </span>                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="vue.js"></script>
+
+</body>
+
+</html>
+
+<!-- Moves 
+    types
+    game indices
+    stasts -->
