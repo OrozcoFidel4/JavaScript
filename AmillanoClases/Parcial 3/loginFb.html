@@ -9,44 +9,46 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Login</title>
     <style>
-        .container{
-            text-align: center;
-            padding-top: 50px;
-
-
+        .col-8 {
+            background-image: url("images/facebook-login.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 969px;
         }
-        .primary{
-            color: rgb(24,119,242);
+
+        .primary {
+            color: rgb(24, 119, 242);
         }
     </style>
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <p style="padding-top:  500px;"></p>
+                <h1 class="text-dark" style="background-color: rgb(255, 255, 255); text-align: center;">Imagen
+                    Relacionada A La Aplicacion</h1>
 
-    <div class="row">
-        <div class="col-4">
+            </div>
+            <div class="col-4" style="text-align: center;">
 
-        </div>
-        <div class="col-4">
-            <div class="container-sm container">
-                
-                <p style="padding-top: 25px; padding-bottom: 5px;">Login with:</p>
-                <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-2-2.png" alt="" 
-                style="width: 50%; padding-bottom: 25px;">
 
-                <input type="email" class="form-control" placeholder="E-mail">
+                <p style="padding-top: 250px; padding-bottom: 5px;">Login with:</p>
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-2-2.png" alt=""
+                    style="width: 45%; padding-bottom: 25px;">
+
+                <input type="email" class="form-control" placeholder="E-mail" required>
                 <br>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" required>
                 <br>
                 <button type="submit" class="btn btn-primary">Login</button>
 
 
+
             </div>
-        </div>
-        <div class="col-4">
 
         </div>
-
     </div>
 
 </body>
