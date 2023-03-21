@@ -48,13 +48,16 @@
 
 
                 <h1 class="text-light" style="padding-top: 200px;">Inicia Sesión:</h1>
-                <p class="text-light" style="padding-bottom: 25px;">¡Entra al mundo de la programación y preparate para el futuro!</p>
+                <p class="text-light" style="padding-bottom: 25px;">¡Entra al mundo de la programación y preparate para
+                    el futuro!</p>
                 <!-- Boton de fb -->
                 <button onclick="onLogin()" class="btn btn-primary">Continuar con Facebook</button>
                 <br><br>
-                <button type="submit" class="btn btn-danger" style="padding-left: 21px; padding-right: 21px;"> Continuar con Google </button>
+                <button type="submit" class="btn btn-danger" style="padding-left: 21px; padding-right: 21px;"> Continuar
+                    con Google </button>
                 <br><br>
-                <button type="submit" class="btn btn-dark" style="padding-left: 21px; padding-right: 21px;"> Continuar con Cuenta </button>
+                <button type="submit" class="btn btn-dark" style="padding-left: 21px; padding-right: 21px;"> Continuar
+                    con Cuenta </button>
 
 
 
@@ -88,7 +91,8 @@
 
         function onLogin() {
             FB.login((response) => {
-                if(response.authResponse) {
+                if (response.authResponse) {
+                    scope = "public_profile,email"
                     FB.api('/me?fields=email,name,picture', (response) => {
                         console.log(response)
                     })
@@ -96,7 +100,7 @@
             })
         }
     </script>
-    
+
 
 </body>
 
